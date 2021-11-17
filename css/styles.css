@@ -1,0 +1,193 @@
+/*=================================================
+
+  Stylesheet for personal online Curriculum Vitae
+  Version: 2.0
+  Author: Valéry MOROZOV
+
+=================================================*/
+
+/* Screen version */
+@media screen {
+  body {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-variant-caps: small-caps;
+    line-height: 1;
+  }
+  
+  .sectionTitle {
+    font-size: large;
+  }
+  
+  .workExpListContainer {
+	padding-top: 0.075rem; /* 1.2px */
+  }
+
+  .iconResize {
+    width: 2.2rem;
+  }
+
+  .ubListItem {
+    border: none;
+    background-color: #F8F9FA; /* Bootstrap's *-light colour */
+  }
+
+  .stackedListGroupItem {
+    padding-bottom: 0.125rem; /* 2px */
+  }
+
+  .stackedSkillsListGroupItem {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+  }
+
+  .hListItemSeparator {
+    height:2px;
+    margin: 0 3.33%;
+    border-bottom: 1px dotted #0275D8; /* Bootstrap's *-primary colour */
+  }
+}
+
+/* Carriage return before e-mail domain name on [sm > xl[ views */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .atDomain::before {
+    content: '\A';
+    white-space: pre;
+  }
+}
+
+/* Carriage return before address suffix on [md > xl[ views */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .addressSuffix::before {
+    content: '\A';
+    white-space: pre;
+  }
+}
+
+
+/* Printable version */
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  body {
+    font-family: "Merriweather", Times, serif;
+    font-variant: small-caps;
+    margin: 1.2cm 0.7cm; /* A4 margin = 1.2cm */
+  }
+
+  a {
+    text-decoration: none!important;
+  }
+
+  .diplomasList > .list-group-item, .workExpList >.list-group-item {
+    padding: 0.02rem 1rem!important;
+  }
+
+  .ubListItem {
+    border: none;
+    background-color: #F8F9FA; /* Bootstrap's *-light colour */
+  }
+
+  .iconResize {
+    width: 2rem;
+  }
+
+  /* Black & White ID photo */
+  .printIDPhoto {
+    filter: grayscale(1.0);
+    -webkit-filter: grayscale(1.0);
+  }
+
+  .printTurnOverArrow {
+    height: 10rem;
+  }
+
+  .printMyNames {
+    margin-top: 0.5rem !important;
+  }
+
+  .printDrivingLicence {
+    margin-bottom: 1rem !important;
+  }
+
+  .printCoordTel {
+    margin-bottom: 1rem;
+  }
+
+  .ruLang:before {
+    content: "Russe: ";
+    padding-left: 1rem;
+  }
+
+  .frLang:before {
+    content: "Français: ";
+    padding-left: 1rem;
+  }
+
+  .engLang:before {
+    content: "Anglais: ";
+    padding-left: 1rem;
+  }
+
+  .printPageBreak {
+    page-break-after: always;
+  }
+
+  .printPage2 {
+    margin-top: 2.85rem; /* 1.2cm top margin */
+  }
+
+  .printGeneralInfoBlock {
+    border: 1px Grey solid !important;
+    box-shadow: 7px 7px 7px #CFCFCF;
+  }
+
+  .sectionTitle {
+    font-size: large;
+    border: 1px Grey solid;
+    box-shadow: 7px 7px 7px #CFCFCF;
+  }
+  
+  .sectionTitle > p {
+	color: LightGrey;
+  }
+
+  .workExpList > li > .row > div:nth-child(2) > p {
+    margin-bottom: 0!important;
+  }
+
+  .workExpListContainer {
+    margin-top: 0.55rem; /* 8.8px */
+  }
+
+  .interestsHobbiesList > li, .qualitiesPerksList > li {
+    padding-top: 0.745rem;
+    padding-bottom: 0.745rem;
+  }
+
+  .progress {
+    position: relative;
+  }
+
+  .progress:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-bottom: 2rem solid #d3d3d3;
+  }
+
+  .progress-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 2rem solid #696969;
+  }
+}
