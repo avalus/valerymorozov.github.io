@@ -10,61 +10,25 @@
 @media screen {
   body {
     font-family: "Montserrat", Arial, sans-serif;
-    font-variant-caps: small-caps;
+    font-variant: small-caps;
     line-height: 1;
   }
-  
-  .sectionTitle {
-    font-size: large;
-  }
-  
-  .workExpListContainer {
-	padding-top: 0.075rem; /* 1.2px */
-  }
 
-  .iconResize {
-    width: 2.2rem;
-  }
-
-  .ubListItem {
+  .list-item {
     border: none;
     background-color: #F8F9FA; /* Bootstrap's *-light colour */
   }
-
-  .stackedListGroupItem {
-    padding-bottom: 0.125rem; /* 2px */
-  }
-
-  .stackedSkillsListGroupItem {
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
-  }
-
-  .hListItemSeparator {
-    height:2px;
-    margin: 0 3.33%;
-    border-bottom: 1px dotted #0275D8; /* Bootstrap's *-primary colour */
-  }
 }
 
-/* Carriage return before e-mail domain name on [sm > xl[ views */
-@media screen and (min-width: 576px) and (max-width: 768px) {
-  .atDomain::before {
+/* Carriage return */
+@media screen and (min-width: 720px) and (max-width: 1280px) {
+  .resp-line-break::before {
     content: '\A';
     white-space: pre;
   }
 }
 
-/* Carriage return before address suffix on [md > xl[ views */
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-  .addressSuffix::before {
-    content: '\A';
-    white-space: pre;
-  }
-}
-
-
-/* Printable version */
+/* Printing version */
 @media print {
   @page {
     margin: 0;
@@ -73,121 +37,82 @@
   body {
     font-family: "Merriweather", Times, serif;
     font-variant: small-caps;
-    margin: 1.2cm 0.7cm; /* A4 margin = 1.2cm */
   }
 
-  a {
-    text-decoration: none!important;
+  h5 {
+    border: solid 1px Grey;
+    box-shadow: 7px 7px 7px #CFCFCF;
   }
 
-  .diplomasList > .list-group-item, .workExpList >.list-group-item {
-    padding: 0.02rem 1rem!important;
+  hr {
+    border-top: 1px solid Grey;
+    margin: 0.47rem 0 0.47rem 0;
+    width: 95%;
   }
 
-  .ubListItem {
-    border: none;
-    background-color: #F8F9FA; /* Bootstrap's *-light colour */
-  }
-
-  .iconResize {
-    width: 2rem;
-  }
-
-  /* Black & White ID photo */
-  .printIDPhoto {
+  /* Grayscale filter on coloured items */
+  .print-grayscaleify {
     filter: grayscale(1.0);
     -webkit-filter: grayscale(1.0);
   }
 
-  .printTurnOverArrow {
-    height: 10rem;
+  .print-margin-bottom {
+    margin-bottom: 0.25rem!important;
   }
 
-  .printMyNames {
-    margin-top: 0.5rem !important;
-  }
-
-  .printDrivingLicence {
-    margin-bottom: 1rem !important;
-  }
-
-  .printCoordTel {
-    margin-bottom: 1rem;
-  }
-
-  .ruLang:before {
-    content: "Russe: ";
-    padding-left: 1rem;
-  }
-
-  .frLang:before {
-    content: "Français: ";
-    padding-left: 1rem;
-  }
-
-  .engLang:before {
-    content: "Anglais: ";
-    padding-left: 1rem;
-  }
-
-  .printPageBreak {
+  .print-page-break {
     page-break-after: always;
   }
 
-  .printPage2 {
-    margin-top: 2.85rem; /* 1.2cm top margin */
+  .print-line-height {
+    margin-bottom: 0.5rem;
   }
 
-  .printGeneralInfoBlock {
-    border: 1px Grey solid !important;
-    box-shadow: 7px 7px 7px #CFCFCF;
+  .print-push-left-24 {
+    padding-right: 1.5rem;
   }
 
-  .sectionTitle {
-    font-size: large;
-    border: 1px Grey solid;
-    box-shadow: 7px 7px 7px #CFCFCF;
-  }
-  
-  .sectionTitle > p {
-	color: LightGrey;
+  .print-push-left-32 {
+    padding-right: 2rem;
   }
 
-  .workExpList > li > .row > div:nth-child(2) > p {
-    margin-bottom: 0!important;
+  .print-push-left-40 {
+    padding-right: 2.5rem;
   }
 
-  .workExpListContainer {
-    margin-top: 0.55rem; /* 8.8px */
+  .print-page2-left {
+    padding-top: 0.5rem;
   }
 
-  .interestsHobbiesList > li, .qualitiesPerksList > li {
-    padding-top: 0.745rem;
-    padding-bottom: 0.745rem;
+  .print-page2-right {
+    margin-top: 1rem;
   }
 
-  .progress {
-    position: relative;
+  .print-ru-label:before {
+    content: "Russe: ";
+    padding-left: 0.75rem;
+    padding-right: 2rem;
   }
 
-  .progress:before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    border-bottom: 2rem solid #d3d3d3;
+  .print-fr-label:before {
+    content: "Français: ";
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
-  .progress-bar {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    border-bottom: 2rem solid #696969;
+  .print-uk-label:before {
+    content: "Anglais: ";
+    padding-left: 0.75rem;
+    padding-right: 1.2rem;
+  }
+
+  .print-language-level {
+    margin-top: 0.8rem;
+    text-align: center!important;
+  }
+
+  .list-item {
+    border: none;
+    background-color: #F8F9FA; /* Bootstrap's *-light colour */
   }
 }
